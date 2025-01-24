@@ -37,4 +37,7 @@ public class Publicacion {
     public void setnLikes(Integer nLikes) {
         this.nLikes = nLikes;
     }
+    public void darLikes() {
+        this.nLikes++;
+    }
 }

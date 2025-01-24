@@ -12,6 +12,10 @@ public class Escrita extends Publicacion {
 
     @Override
     public String toString() {
-        return "Autor: " + super.getNombreA() + ", ID: " + ID + ", texto: " + texto;
+        return "Autor: " + super.getNombreA()
+                + "\nID: " + ID
+                + "\ntexto: " + texto
+                + "\nFecha: " + super.getFecha()
+                + "\nLikes: " + super.getnLikes();
     }
 }
