@@ -21,8 +21,11 @@ public class Main{
 
         publicaciones.add(fo);
 
-        publicaciones.stream()
-                .filter(nombre -> nombre.equals("Armando"))
-                .forEach(System.out :: println);
+        //System.out.println(publicacionesDe("Armando", publicaciones));
+    }
+    private static void publicacionesDe(String nombre, List<Publicacion> listaPublicaciones) {
+        listaPublicaciones.stream()
+                .filter(n-> n.getNombreA().equals(nombre))
+                .forEach(System.out::println);
     }
 }
