@@ -34,7 +34,7 @@ public class Banco {
         return sucursales;
     }
 
-    public void addSucursales(Sucursal sucursal) {
+    public void addSucursal(Sucursal sucursal) {
         this.sucursales.add(sucursal);
     }
 
