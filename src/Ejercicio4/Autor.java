@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class Autor {
     private String nombre;
-    private int fechaNacimiento;
+    private String fechaNac;
 
-    public Autor(String nombre, int fechaNacimiento) {
+    public Autor(String nombre, String fechaNac) {
         this.nombre = nombre;
-        this.fechaNacimiento = fechaNacimiento;
+        this.fechaNac = fechaNac;
     }
 
     public String getNombre() {
@@ -19,12 +19,17 @@ public class Autor {
         this.nombre = nombre;
     }
 
-    public int getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getFechaNac() {
+        return fechaNac;
     }
 
-    public void setFechaNacimiento(int fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setFechaNac(String fechaNac) {
+        this.fechaNac = fechaNac;
+    }
+
+    @Override
+    public String toString(){
+        return this.nombre;
     }
 
 }

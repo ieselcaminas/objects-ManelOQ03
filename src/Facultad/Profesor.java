@@ -1,63 +1,51 @@
 package Facultad;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Profesor {
-    public static void main(String[] args) {
-        Facultad universidad = new Facultad(1, "UPV");
-        List<AreaConocimiento> facultad = new ArrayList<>();
-        AreaConocimiento ciencia = new AreaConocimiento(1, "Ciencias");
-        Catedra catCiencias = new Catedra(1, "Cátedra Ciencias", universidad);
-        universidad.addCatedra(catCiencias);
-        Departamento inf = new Departamento(1, "Informática", ciencia, catCiencias);
-        Profesor victor = new Profesor(1, "Víctor", inf);
-        inf.addProfesor(victor);
-        victor.addCatedra(catCiencias);
-        catCiencias.addProfesor(victor);
+    private int n_prof;
+    private String nombre;
+    private Departamento departamento;
+    private List<Catedra> catedras;
 
-        Profesor ruben = new Profesor(2, "Rubén", inf);
-        inf.addProfesor(ruben);
-        ruben.addCatedra(catCiencias);
-        catCiencias.addProfesor(ruben);
+    public Profesor(int n_prof, String nombre, Departamento departamento) {
+        this.n_prof = n_prof;
+        this.nombre = nombre;
+        this.departamento = departamento;
+        this.catedras = new ArrayList<>();
+    }
 
-        Departamento mat = new Departamento(2, "Matemáticas", ciencia, catCiencias);
-        Profesor prof = new Profesor(3, "Juan", mat);
-        mat.addProfesor(prof);
-
-        ciencia.addDepartamento(inf);
-        ciencia.addDepartamento(mat);
+    public int getN_prof() {
+        return n_prof;
+    }
 
 
-        Catedra catLetras = new Catedra(2, "Cátedra letras", universidad);
-        universidad.addCatedra(catLetras);
-        AreaConocimiento letras = new AreaConocimiento(2, "Letras");
-        Departamento latin = new Departamento(3, "Latín", letras, catLetras);
-        letras.addDepartamento(latin);
+    public String getNombre() {
+        return nombre;
+    }
 
-        facultad.add(ciencia);
-        facultad.add(letras);
-/*
-        for (AreaConocimiento area:facultad){
-            System.out.println(area.getNombre());
-            for (Departamento dep: area.getDepartamentos()){
-                System.out.println("\t" + dep.getNombre());
-                for(Profesor profe : dep.getProfesores()){
-                    System.out.println("\t\t" + profe.getNombre());
-                    for(Catedra cat: profe.getCatedras()){
-                        System.out.println("\t\t\t" + cat.getNombre());
-                    }
-                }
-            }
-        }
-*/
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-        for (AreaConocimiento area:facultad){
-            for (Departamento dep: area.getDepartamentos()){
-                System.out.println("\t" + dep.getNombre());
-                System.out.println("\t\t" + dep.getCatedra().getNombre());
-                for (Profesor p: dep.getCatedra().getProfesores()){
-                    System.out.println("\t\t\t" + p.getNombre());
-                }
-            }
-        }
+    public Departamento getDepartamento() {
+        return departamento;
+    }
 
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+
+    public List<Catedra> getCatedras() {
+        return catedras;
+    }
+    public void addCatedra(Catedra catedra){
+        this.catedras.add(catedra);
+    }
+
+    @Override
+    public String toString(){
+        return this.nombre;
     }
 }

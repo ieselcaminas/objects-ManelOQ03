@@ -11,7 +11,7 @@ public class Main {
         Catedra catCiencias = new Catedra(1, "Cátedra Ciencias", universidad);
         universidad.addCatedra(catCiencias);
         Departamento inf = new Departamento(1, "Informática", ciencia, catCiencias);
-        Profesor victor = new Profesor(1, "Víctor", inf);
+        Profesor victor = new Profesor(1, "Paco", inf);
         inf.addProfesor(victor);
         victor.addCatedra(catCiencias);
         catCiencias.addProfesor(victor);
@@ -22,7 +22,7 @@ public class Main {
         catCiencias.addProfesor(ruben);
 
         Departamento mat = new Departamento(2, "Matemáticas", ciencia, catCiencias);
-        Profesor prof = new Profesor(3, "Juan", mat);
+        Profesor prof = new Profesor(3, "Jose", mat);
         mat.addProfesor(prof);
 
         ciencia.addDepartamento(inf);
