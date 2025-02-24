@@ -1,15 +1,18 @@
 package Herencias;
 
-public class Perro extends Animal {
-    public Perro(String nombre) {
+public class Perro extends Mamifero {
+
+    public Perro (String nombre) {
         super(nombre);
     }
 
+    @Override
     public void comunicarse() {
-        System.out.println("guau");
+        System.out.println("Guau");
     }
 
     public void traerZapatillas() {
         System.out.println("Toma tus zapatillas, amo");
     }
+
 }
